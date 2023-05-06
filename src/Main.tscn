@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/characters/character1/midori.png" type="Texture" id=1]
+[ext_resource path="res://src/Main.gd" type="Script" id=2]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+visible = false
+margin_right = 1008.0
+margin_bottom = 576.0
+
+[node name="Dialogue" type="Label" parent="CanvasLayer"]
+margin_right = 1006.0
+margin_bottom = 575.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -4, -1 )
+texture = ExtResource( 1 )
