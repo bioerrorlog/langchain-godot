@@ -26,6 +26,12 @@ margin_bottom = 573.0
 align = 1
 valign = 1
 
+[node name="UserInput" type="LineEdit" parent="CanvasLayer"]
+margin_left = 164.0
+margin_top = 220.0
+margin_right = 413.0
+margin_bottom = 335.0
+
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 513, 268 )
+position = Vector2( 689, 265 )
 texture = ExtResource( 1 )

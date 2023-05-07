@@ -12,6 +12,7 @@ var dialogues = [
 var dialogue_index = 0
 
 onready var dialogue_label = $CanvasLayer/Dialogue
+onready var user_input = $CanvasLayer/UserInput
 
 func _ready():
 	if !OS.has_feature("standalone"): # if NOT exported version
@@ -34,7 +35,8 @@ func display_dialogue():
 func talk():
 	print("Start talk()")
 	var output = []
-	var exit_code = OS.execute(interpreter_path, [script_path], true, output)
+	var user_text = user_input.text
+	var exit_code = OS.execute(interpreter_path, [script_path, user_text], true, output)
 	if exit_code == 0:
 		print("Python talk script output: ", output)
 		dialogues = output
