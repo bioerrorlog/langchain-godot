@@ -32,6 +32,7 @@ func display_dialogue():
 		talk()
 
 func talk():
+	print("Start talk()")
 	var output = []
 	var exit_code = OS.execute(interpreter_path, [script_path], true, output)
 	if exit_code == 0:
