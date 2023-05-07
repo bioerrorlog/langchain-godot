@@ -14,9 +14,15 @@ margin_right = 1008.0
 margin_bottom = 576.0
 
 [node name="Dialogue" type="Label" parent="CanvasLayer"]
-margin_right = 1006.0
-margin_bottom = 575.0
+anchor_left = 0.003
+anchor_right = 0.003
+margin_left = 48.928
+margin_top = 434.0
+margin_right = 960.928
+margin_bottom = 573.0
+align = 1
+valign = 1
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -4, -1 )
+position = Vector2( 513, 268 )
 texture = ExtResource( 1 )
