@@ -32,6 +32,15 @@ margin_top = 220.0
 margin_right = 413.0
 margin_bottom = 335.0
 
+[node name="TalkButton" type="Button" parent="CanvasLayer"]
+margin_left = 341.0
+margin_top = 339.0
+margin_right = 414.0
+margin_bottom = 359.0
+text = "Talk"
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 689, 265 )
 texture = ExtResource( 1 )
+
+[connection signal="pressed" from="CanvasLayer/TalkButton" to="." method="_on_TalkButton_pressed"]

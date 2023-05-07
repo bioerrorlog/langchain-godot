@@ -26,14 +26,17 @@ func _input(event):
 		dialogue_index += 1
 		display_dialogue()
 
+func _on_TalkButton_pressed():
+	talk()
+
 func display_dialogue():
 	if dialogue_index < dialogues.size():
 		dialogue_label.text = dialogues[dialogue_index]
 	else:
-		talk()
+		print("End of the dialogue")
 
 func talk():
-	print("Start talk()")
+	print("talk started")
 	var output = []
 	var user_text = user_input.text
 	var exit_code = OS.execute(interpreter_path, [script_path, user_text], true, output)
