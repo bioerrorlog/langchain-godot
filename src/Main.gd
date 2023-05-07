@@ -19,7 +19,6 @@ func _ready():
 		script_path = ProjectSettings.globalize_path("res://scripts/talk.py")
 
 	display_dialogue()
-	talk()
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
@@ -30,13 +29,15 @@ func display_dialogue():
 	if dialogue_index < dialogues.size():
 		dialogue_label.text = dialogues[dialogue_index]
 	else:
-		print("End of dialogues")
+		talk()
 
 func talk():
 	var output = []
-	var stderr = []
 	var exit_code = OS.execute(interpreter_path, [script_path], true, output)
 	if exit_code == 0:
 		print("Python talk script output: ", output)
+		dialogues = output
+		dialogue_index = 0
+		display_dialogue()
 	else:
 		print("Python talk script error. Exit code: ", exit_code)
