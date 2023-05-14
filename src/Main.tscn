@@ -26,32 +26,33 @@ align = 1
 valign = 1
 
 [node name="UserInput" type="LineEdit" parent="CanvasLayer"]
-margin_left = 164.0
-margin_top = 220.0
-margin_right = 413.0
-margin_bottom = 335.0
+margin_left = 375.0
+margin_top = 234.0
+margin_right = 624.0
+margin_bottom = 349.0
 
 [node name="TalkButton" type="Button" parent="CanvasLayer"]
-margin_left = 341.0
-margin_top = 339.0
-margin_right = 414.0
-margin_bottom = 359.0
+margin_left = 552.0
+margin_top = 353.0
+margin_right = 625.0
+margin_bottom = 373.0
 text = "Talk"
 
 [node name="SaveInput" type="LineEdit" parent="CanvasLayer"]
-margin_left = 76.0
-margin_top = 82.0
-margin_right = 406.0
-margin_bottom = 130.0
+margin_left = 329.0
+margin_top = 81.0
+margin_right = 659.0
+margin_bottom = 129.0
 
 [node name="SaveButton" type="Button" parent="CanvasLayer"]
-margin_left = 332.0
-margin_top = 142.0
-margin_right = 405.0
-margin_bottom = 162.0
+margin_left = 585.0
+margin_top = 141.0
+margin_right = 658.0
+margin_bottom = 161.0
 text = "Save"
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
+visible = false
 position = Vector2( 689, 265 )
 z_index = 2
 z_as_relative = false
