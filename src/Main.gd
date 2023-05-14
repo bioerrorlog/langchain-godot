@@ -20,7 +20,7 @@ func _ready():
 	display_dialogue()
 
 func _on_TalkButton_pressed():
-	talk()
+	talk(user_input.text)
 
 func _on_SaveButton_pressed():
 	save_manager.save_api(save_input.text)
@@ -31,10 +31,9 @@ func display_dialogue():
 	else:
 		print("End of the dialogue")
 
-func talk():
+func talk(user_text: String):
 	print("talk started")
 	var output = []
-	var user_text = user_input.text
 	var api_key = save_manager.load_api()
 
 	var exit_code = OS.execute(interpreter_path, [script_path, user_text, api_key], true, output)
