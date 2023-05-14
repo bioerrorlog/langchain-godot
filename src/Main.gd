@@ -13,6 +13,8 @@ var dialogue_index = 0
 
 onready var dialogue_label = $CanvasLayer/Dialogue
 onready var user_input = $CanvasLayer/UserInput
+onready var save_input = $CanvasLayer/SaveInput
+onready var save_manager = preload("res://src/SaveManager.gd").new()
 
 func _ready():
 	if !OS.has_feature("standalone"): # if NOT exported version
@@ -29,6 +31,9 @@ func _input(event):
 func _on_TalkButton_pressed():
 	talk()
 
+func _on_SaveButton_pressed():
+	save_manager.save_api(save_input.text)
+
 func display_dialogue():
 	if dialogue_index < dialogues.size():
 		dialogue_label.text = dialogues[dialogue_index]
@@ -39,7 +44,9 @@ func talk():
 	print("talk started")
 	var output = []
 	var user_text = user_input.text
-	var exit_code = OS.execute(interpreter_path, [script_path, user_text], true, output)
+	var api_key = save_manager.load_api()
+
+	var exit_code = OS.execute(interpreter_path, [script_path, user_text, api_key], true, output)
 	if exit_code == 0:
 		print("Python talk script output: ", output)
 		dialogues = output

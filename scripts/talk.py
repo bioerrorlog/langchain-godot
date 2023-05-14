@@ -8,7 +8,9 @@ from langchain.schema import (
 
 
 user_text = sys.argv[1]
-chat = ChatOpenAI(temperature=1)
+api_key = sys.argv[2]
+
+chat = ChatOpenAI(temperature=1, openai_api_key=api_key)
 
 response = chat([HumanMessage(content=user_text)])
 
