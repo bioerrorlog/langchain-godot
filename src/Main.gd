@@ -4,11 +4,7 @@ var DIR = OS.get_executable_path().get_base_dir()
 var interpreter_path = DIR.plus_file("venv/bin/python3.10")
 var script_path = DIR.plus_file("scripts/talk.py")
 
-var dialogues = [
-	"This is the first line of dialogue.",
-	"This is the second line of dialogue.",
-	"This is the third line of dialogue."
-]
+var dialogues = []
 var dialogue_index = 0
 
 onready var dialogue_label = $CanvasLayer/Dialogue
@@ -22,11 +18,6 @@ func _ready():
 		script_path = ProjectSettings.globalize_path("res://scripts/talk.py")
 
 	display_dialogue()
-
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
-		dialogue_index += 1
-		display_dialogue()
 
 func _on_TalkButton_pressed():
 	talk()

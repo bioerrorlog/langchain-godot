@@ -26,23 +26,24 @@ align = 1
 valign = 1
 
 [node name="UserInput" type="LineEdit" parent="CanvasLayer"]
-margin_left = 375.0
+margin_left = 334.0
 margin_top = 234.0
-margin_right = 624.0
+margin_right = 657.0
 margin_bottom = 349.0
 
 [node name="TalkButton" type="Button" parent="CanvasLayer"]
-margin_left = 552.0
-margin_top = 353.0
-margin_right = 625.0
-margin_bottom = 373.0
+margin_left = 580.0
+margin_top = 364.0
+margin_right = 653.0
+margin_bottom = 384.0
 text = "Talk"
 
 [node name="SaveInput" type="LineEdit" parent="CanvasLayer"]
 margin_left = 329.0
-margin_top = 81.0
+margin_top = 105.0
 margin_right = 659.0
 margin_bottom = 129.0
+placeholder_text = "Enter OpenAI API Key"
 
 [node name="SaveButton" type="Button" parent="CanvasLayer"]
 margin_left = 585.0
