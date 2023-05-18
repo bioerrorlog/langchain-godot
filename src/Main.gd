@@ -1,8 +1,8 @@
 extends Node2D
 
 var DIR = OS.get_executable_path().get_base_dir()
-var interpreter_path = DIR.plus_file("venv/bin/python3.10")
-var script_path = DIR.plus_file("scripts/talk.py")
+var interpreter_path = DIR.plus_file("python/venv/bin/python3.10")
+var script_path = DIR.plus_file("python/src/talk.py")
 
 var dialogues = []
 var dialogue_index = 0
@@ -14,8 +14,8 @@ onready var save_manager = preload("res://src/SaveManager.gd").new()
 
 func _ready():
 	if !OS.has_feature("standalone"): # if NOT exported version
-		interpreter_path = ProjectSettings.globalize_path("res://venv/bin/python3.10")
-		script_path = ProjectSettings.globalize_path("res://scripts/talk.py")
+		interpreter_path = ProjectSettings.globalize_path("python/venv/bin/python3.10")
+		script_path = ProjectSettings.globalize_path("res://python/src/talk.py")
 
 	display_dialogue()
 
